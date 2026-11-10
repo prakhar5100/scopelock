@@ -66,6 +66,12 @@ const personas = [
   },
 ];
 
+const highlights = [
+  'Versioned baselines that preserve every approved agreement.',
+  'Structured change requests that become priced, documented change orders.',
+  'Audit-ready history that makes scope decisions traceable and defensible.',
+];
+
 function App() {
   return (
     <div className="page-shell">
@@ -77,7 +83,7 @@ function App() {
             <h1>ScopeLock</h1>
           </div>
         </div>
-        <nav className="nav">
+        <nav className="nav" aria-label="Main navigation">
           <a href="#overview">Overview</a>
           <a href="#concepts">Concepts</a>
           <a href="#flows">Flows</a>
@@ -93,15 +99,23 @@ function App() {
             <p className="lead">
               ScopeLock helps teams turn signed proposals into structured baselines and turn every later request into a traceable, priced change order.
             </p>
+            <ul className="highlights" aria-label="Product highlights">
+              {highlights.map((highlight) => (
+                <li key={highlight}>{highlight}</li>
+              ))}
+            </ul>
             <div className="cta-row">
-              <button className="primary">View baseline</button>
-              <button className="secondary">Review change flow</button>
+              <button type="button" className="primary">View baseline</button>
+              <button type="button" className="secondary">Review change flow</button>
             </div>
           </div>
 
           <div className="hero-panel">
             <div className="panel-card">
-              <span className="panel-label">Active project</span>
+              <div className="panel-header">
+                <span className="panel-label">Active project</span>
+                <span className="status-pill">Healthy</span>
+              </div>
               <strong>Client Portal v2</strong>
               <div className="mini-grid">
                 <div>
